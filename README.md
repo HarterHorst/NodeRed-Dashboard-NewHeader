@@ -7,6 +7,7 @@ Nodered Dashboard template node that can provide a
 - Home-Button 
 
 on the header.
+![alt text](https://github.com/HarterHorst/NodeRed-Dashboard-NewHeader/blob/master/Sample.png)
 
 # Implementation
 1. Create a template node for code
