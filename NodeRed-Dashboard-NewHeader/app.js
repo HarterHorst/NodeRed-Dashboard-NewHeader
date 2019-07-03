@@ -1,8 +1,5 @@
 <script id="clockScript1" type="text/javascript">
 
-var language = new Object();
-language.payload = 'change'
-
 var home = new Object();
 home.payload = 'Home'; // This is the payload that goes out
     
@@ -66,7 +63,7 @@ $(function () {
     pic.height=45;
     pic.left=50;
     taster.appendChild(pic);
-    pic.addEventListener("click", doThis.bind(null,language));
+    pic.addEventListener("click", doThis.bind(null,home));
     divPicButton.append(taster);
         
     //add to toolbar when it's available
@@ -77,7 +74,7 @@ $(function () {
         var toolbar = $('.md-toolbar-tools');
         if(!toolbar.length) return;
     
-        toolbar.append(divButton);
+        // toolbar.append(divButton);
         toolbar.append(divText);
         toolbar.append(divClock);
         toolbar.append(divPicButton)
