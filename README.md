@@ -18,7 +18,8 @@ on the header.
 
 - home.payload = 'Home' //Set to name of homepage
 - change month according to your language in function formatDate
-- pic.src = '/Home1.png' //Set to path and filename of image (Pls. consider  
-https://discourse.nodered.org/t/how-to-enable-ability-to-input-local-image-files-in-to-node-red-dashboard/3085
+- pic.src = '/Home1.png' //Set to path and filename of image 
+  - (Pls. consider: https://discourse.nodered.org/t/how-to-enable-ability-to-input-local-image-files-in-to-node-red-dashboard/3085)
+- asdf
 
 
