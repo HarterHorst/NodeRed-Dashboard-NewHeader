@@ -5,6 +5,7 @@ home.payload = 'Home'; // This is the payload that goes out
     
 var theScope = scope;
 var clockInterval;
+
     
 $(function () {
     if (clockInterval) return;
