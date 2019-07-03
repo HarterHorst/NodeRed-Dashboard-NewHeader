@@ -1,17 +1,3 @@
-
-<style>
-.btnHome_class {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-</style>
-
 <script id="clockScript1" type="text/javascript">
 
 var home = new Object();
@@ -23,13 +9,11 @@ var clockInterval;
 $(function () {
     if (clockInterval) return;
     
-    //
-    // add clock
-    //
+    //add clock
     var divClock = $('<div />');
     var p = $('<p />');
     divClock.append(p);
-    divClock[0].style.margin = '5px';
+    divClock[0].style.margin = '15px';
    
     function addZero(i) {
         if (i < 10) {
@@ -55,18 +39,14 @@ $(function () {
     
     clockInterval = setInterval(displayTime, 1000);
     
-    //
     // add Text
-    //
     var divText = $('<div />');
     var t = document.createTextNode("Production"); // <== add title here
     divText.append(t)
     divText[0].style.margin = '40px auto';
     divText[0].style.size = '40';
     
-    //
     // add button
-    //
     var divButton = $('<div />');
     var button = document.createElement("BUTTON");
     var b = document.createTextNode("Home Screen")
@@ -77,23 +57,23 @@ $(function () {
     divButton.append(button);
     
     //
-    // add Button picture button
+    // Add Button picture button
     //
     
     //var divPicButton =$('<div />'); //old statement from forum.
     var divPicButton = document.createElement ("div");
-    var taster = document.createElement("BUTTON");
-    taster.setAttribute("class", "btnHome_class");
+    var btn_Home = document.createElement("BUTTON");
+    btn_Home.setAttribute("class", "btnHome_class");
     
     var pic = new Image();
     pic.src = "/Home1.png"; // <== add path and filename of picture here
     pic.height=40;
     pic.width=40;
-    taster.appendChild(pic);
+    btn_Home.appendChild(pic);
     pic.addEventListener("click", doThis.bind(null,home));
-    divPicButton.append(taster);
+    divPicButton.append(btn_Home);
         
-    // add to toolbar when it's available
+    //add to toolbar when it's available
     var addToToolbarTimer;
      
     function addToToolbar() {
