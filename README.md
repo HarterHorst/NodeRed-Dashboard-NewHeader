@@ -1,5 +1,5 @@
 # NodeRed-Dashboard-NewHeader
-Header for Nodered Dashboard - Button, Text, Date/Time
+Customized Top-Bar for Nodered Dashboard - Button, Text, Date/Time
 
 Nodered Dashboard template node that can provide a 
 - text
