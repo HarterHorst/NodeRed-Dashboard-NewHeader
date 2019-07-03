@@ -6,9 +6,14 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.njsproj
+*.sln
+
+sources-nogit/
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+.gitignore
 
 # Build results
 [Dd]ebug/
