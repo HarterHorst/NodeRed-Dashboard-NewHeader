@@ -1,0 +1,88 @@
+[
+    {
+        "id": "57efc885.04ef58",
+        "type": "tab",
+        "label": "CSS",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d0b11807.e5dcd8",
+        "type": "ui_template",
+        "z": "57efc885.04ef58",
+        "group": "b921909c.f0b7b",
+        "name": "HomeButton-CSS",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n.btnHome_class {\n  background-color: #4CAF50; /* Green */\n  border: none;\n  color: white;\n  padding: 10px 10px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-size: 16px;\n}\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "global",
+        "x": 110,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "968506ce.d77168",
+        "type": "ui_ui_control",
+        "z": "57efc885.04ef58",
+        "name": "",
+        "x": 240,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6cba8f6a.475c4",
+        "type": "ui_template",
+        "z": "57efc885.04ef58",
+        "group": "7b2e834f.4ff32c",
+        "name": "TopBar",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<script id=\"clockScript1\" type=\"text/javascript\">\n\nvar home = new Object();\nhome.payload = 'Home'; // This is the payload that goes out\n    \nvar theScope = scope;\nvar clockInterval;\n    \n$(function () {\n    if (clockInterval) return;\n    \n    //add clock\n    var divClock = $('<div />');\n    var p = $('<p />');\n    divClock.append(p);\n    divClock[0].style.margin = '15px';\n   \n    function addZero(i) {\n        if (i < 10) {\n            i = \"0\" + i\n        }\n        return i;\n    }\n\n    function formatDate(date) {\n        var monthNames = [\"Januar\", \"Februar\", \"März\", \"April\", \"Mai\", \"Juni\", \"Juli\", \"August\", \"September\", \"Oktober\", \"November\", \"Dezember\"];\n        var day = date.getDate();\n        var monthIndex = date.getMonth();\n        var year = date.getFullYear();\n        var hour = addZero(date.getHours());\n        var minute = addZero(date.getMinutes());\n        var second = addZero(date.getSeconds());\n        return day + '. ' + monthNames[monthIndex] + ' ' + year + \" \" + hour +':' + minute + ':' + second;\n    }\n \n    function displayTime() {\n        p.text( formatDate( new Date() ) );\n    }\n    \n    clockInterval = setInterval(displayTime, 1000);\n    \n    // add Text\n    var divText = $('<div />');\n    var t = document.createTextNode(\"Production\"); // <== add title here\n    divText.append(t)\n    divText[0].style.margin = '40px auto';\n    divText[0].style.size = '40';\n    \n    // add button\n    var divButton = $('<div />');\n    var button = document.createElement(\"BUTTON\");\n    var b = document.createTextNode(\"Home Screen\")\n    button.height=40;\n    button.width=40;\n    button.appendChild(b);\n    button.addEventListener(\"click\", doIT.bind(null,home));\n    divButton.append(button);\n    \n    //\n    // Add Button picture button\n    //\n    \n    //var divPicButton =$('<div />'); //old statement from forum.\n    var divPicButton = document.createElement (\"div\");\n    var btn_Home = document.createElement(\"BUTTON\");\n    btn_Home.setAttribute(\"class\", \"btnHome_class\");\n    \n    var pic = new Image();\n    pic.src = \"/Home1.png\"; // <== add path and filename of picture here\n    pic.height=40;\n    pic.width=40;\n    btn_Home.appendChild(pic);\n    pic.addEventListener(\"click\", doThis.bind(null,home));\n    divPicButton.append(btn_Home);\n        \n    //add to toolbar when it's available\n    var addToToolbarTimer;\n     \n    function addToToolbar() {\n    \n        var toolbar = $('.md-toolbar-tools');\n        if(!toolbar.length) return;\n    \n        // toolbar.append(divButton);\n        toolbar.append(divText);\n        toolbar.append(divClock);\n        toolbar.append(divPicButton)\n        clearInterval(addToToolbarTimer);\n    }\n    \n    addToToolbarTimer = setInterval(addToToolbar, 100);\n    \n    function doIT(m){\n        theScope.send( m )\n    }\n\n    function doThis(m){\n        theScope.send( m )\n    }\n\n});\n    \n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 80,
+        "y": 100,
+        "wires": [
+            [
+                "968506ce.d77168"
+            ]
+        ]
+    },
+    {
+        "id": "b921909c.f0b7b",
+        "type": "ui_group",
+        "z": "",
+        "name": "Group 1",
+        "tab": "",
+        "order": 1,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "7b2e834f.4ff32c",
+        "type": "ui_group",
+        "z": "",
+        "name": "Default",
+        "tab": "cb0cd7ff.dffed8",
+        "order": 2,
+        "disp": true,
+        "width": "12"
+    },
+    {
+        "id": "cb0cd7ff.dffed8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1
+    }
+]
