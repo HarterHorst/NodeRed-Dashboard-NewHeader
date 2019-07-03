@@ -1,5 +1,6 @@
 <script id="clockScript1" type="text/javascript">
-    var language = new Object();
+
+var language = new Object();
 language.payload = 'change'
 
 var home = new Object();
