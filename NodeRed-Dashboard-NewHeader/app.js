@@ -44,7 +44,7 @@ $(function () {
     
     // add Text
     var divText = $('<div />');
-    var t = document.createTextNode("Production"); // hier den Title eingeben
+    var t = document.createTextNode("Production"); // <== add title here
     divText.append(t)
     divText[0].style.margin = '40px auto';
     divText[0].style.size = '40';
@@ -59,11 +59,10 @@ $(function () {
     divButton.append(button);
     
     // Add Button picture button
-
     var divPicButton =$('<div />');
     var taster = document.createElement("BUTTON");
     var pic = new Image();
-    pic.src = "/homebutton.jpg";
+    pic.src = "/homebutton.jpg"; // <== add path and filename of picture here
     pic.height=45;
     pic.left=50;
     taster.appendChild(pic);
@@ -72,12 +71,7 @@ $(function () {
         
     //add to toolbar when it's available
     var addToToolbarTimer;
-
-    function test() {
-        var test = "test";
-        alert (test);
-    }
- 
+     
     function addToToolbar() {
     
         var toolbar = $('.md-toolbar-tools');
