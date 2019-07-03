@@ -25,5 +25,5 @@ on the header.
 - toolbar.append (x) // Enable or disable functions 
 
 
-# Credits
-- Most of the code comes from here: https://discourse.nodered.org/t/button-in-topbar/6377/31
+# Credits and links
+- Most of the code and ideas come from here: https://discourse.nodered.org/t/button-in-topbar/6377/31
