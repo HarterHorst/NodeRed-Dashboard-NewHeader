@@ -5,13 +5,14 @@ home.payload = 'Home'; // This is the payload that goes out
     
 var theScope = scope;
 var clockInterval;
-
-
-    
+ 
 $(function () {
     if (clockInterval) return;
     
-    //add clock
+    //
+    // add clock
+    //
+
     var divClock = $('<div />');
     var p = $('<p />');
     divClock.append(p);
@@ -41,14 +42,20 @@ $(function () {
     
     clockInterval = setInterval(displayTime, 1000);
     
+    //
     // add Text
+    //
+
     var divText = $('<div />');
     var t = document.createTextNode("Production"); // <== add title here
     divText.append(t)
     divText[0].style.margin = '40px auto';
     divText[0].style.size = '40';
     
+    //
     // add button
+    //
+
     var divButton = $('<div />');
     var button = document.createElement("BUTTON");
     var b = document.createTextNode("Home Screen")
@@ -59,11 +66,10 @@ $(function () {
     divButton.append(button);
     
     //
-    // Add Button picture button
+    // Add picture button
     //
     
-    //var divPicButton =$('<div />'); //old statement from forum.
-    var divPicButton = document.createElement ("div");
+    var divPicButton = $('<div />');
     var btn_Home = document.createElement("BUTTON");
     btn_Home.setAttribute("class", "btnHome_class");
     
@@ -75,7 +81,6 @@ $(function () {
     pic.addEventListener("click", doThis.bind(null,home));
     divPicButton.append(btn_Home);
         
-    //add to toolbar when it's available
     var addToToolbarTimer;
      
     function addToToolbar() {
